@@ -22,7 +22,13 @@ Route::get('/', function () {
 // Admin All Route 
 Route::controller(AdminController::class)->group(function(){
 
-    Route::get('/admin/logout', 'destroy')->middleware(['auth','verified'])->name('admin.logout');
+    Route::prefix('admin')->group(function(){
+
+    Route::get('/profile', 'profile')->middleware(['auth','verified'])->name('admin.profile');
+    Route::get('/logout', 'destroy')->middleware(['auth','verified'])->name('admin.logout');
+
+    });
+    
 
 
 });
