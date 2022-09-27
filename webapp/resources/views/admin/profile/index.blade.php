@@ -18,7 +18,7 @@
                                         <hr>
                                         <h4 class="card-title">Email : {{$profile_data->email}}</h4>
                                         <hr>
-                                        <a href="" class="btn btn-info btn-rounded waves-effect waves-light">Edit Profile</a>
+                                        <a href="{{route('admin.edit.profile')}}" class="btn btn-info btn-rounded waves-effect waves-light">Edit Profile</a>
                                     </div>
                                 </div>
                             </div>
