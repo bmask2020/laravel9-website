@@ -9,7 +9,12 @@
                                 <div class="card">
                                     <br><br>
                                     <center>
-                                    <img class="rounded-circle avatar-xl" draggable="false" alt="user image" src="{{asset('backend/assets/images/small/img-5.jpg')}}" data-holder-rendered="true">
+                                        @if(!empty($profile_data->profile_image))
+                                        <img class="rounded-circle avatar-xl" draggable="false" alt="user image" src="{{asset($profile_data->profile_image)}}" data-holder-rendered="true">
+                                        @else
+                                            <img class="rounded-circle avatar-xl" draggable="false" alt="user image" src="{{asset('backend/assets/images/profile/no_image.jpg')}}" data-holder-rendered="true">
+                                      
+                                        @endif
                                     </center>
                                     <div class="card-body">
                                         <h4 class="card-title">Name : {{$profile_data->name}}</h4>

@@ -66,14 +66,26 @@
                             </button>
                         </div>
 
-                       
+                       @php 
+
+                        $id = Auth::user()->id;
+
+                        $profile_data = App\Models\User::find($id);
+
+                       @endphp
 
                         <div class="dropdown d-inline-block user-dropdown">
                             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="rounded-circle header-profile-user" src="{{asset('backend/assets/images/users/avatar-1.jpg')}}"
+                                @if(!empty($profile_data->profile_image))
+                                <img class="rounded-circle header-profile-user" src="{{asset($profile_data->profile_image)}}"
                                     alt="Header Avatar">
-                                <span class="d-none d-xl-inline-block ms-1">Julia</span>
+                                @else
+                                <img class="rounded-circle header-profile-user" src="{{asset('backend/assets/images/profile/no_image.jpg')}}"
+                                    alt="Header Avatar">
+                                @endif
+                                
+                                <span class="d-none d-xl-inline-block ms-1">{{$profile_data->name}}</span>
                                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">

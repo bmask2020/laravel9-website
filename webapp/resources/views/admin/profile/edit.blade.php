@@ -46,7 +46,12 @@
                                             <div class="row mb-3">
                                             <label for="example-text-input" class="col-sm-2 col-form-label"></label>
                                                 <div class="col-sm-10">
-                                                <img class="rounded avatar-lg" draggable="false" id="showImag" alt="user image" src="{{asset('backend/assets/images/small/img-5.jpg')}}" data-holder-rendered="true">
+                                                    @if(!empty($edit_data->profile_image)) 
+                                                    <img class="rounded avatar-lg" draggable="false" id="showImag" alt="user image" src="{{asset($edit_data->profile_image)}}" data-holder-rendered="true">
+                                                    @else
+                                                    <img class="rounded avatar-lg" draggable="false" id="showImag" alt="user image" src="{{asset('backend/assets/images/profile/no_image.jpg')}}" data-holder-rendered="true">
+                                                    @endif
+                                                        
                                                 </div>
                                             </div>
 
