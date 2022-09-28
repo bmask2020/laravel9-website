@@ -10,7 +10,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                     <h4 class="card-title">Edit Profile</h4>
-                                        <form action="" method="post">
+                                        <form action="{{route('admin.store.profile')}}" method="post" enctype="multipart/form-data">
                                             @csrf
                                             <div class="row mb-3">
                                                 <label for="example-text-input" class="col-sm-2 col-form-label">Name</label>

@@ -27,6 +27,7 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('/profile', 'profile')->middleware(['auth','verified'])->name('admin.profile');
     Route::get('/logout', 'destroy')->middleware(['auth','verified'])->name('admin.logout');
     Route::get('/profile/edit', 'edit_profile')->middleware(['auth','verified'])->name('admin.edit.profile');
+    Route::post('/profile/store', 'store_profile')->middleware(['auth','verified'])->name('admin.store.profile');
     
     });
     

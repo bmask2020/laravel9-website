@@ -30,6 +30,45 @@ class AdminController extends Controller
         return view('admin.profile.edit', compact('edit_data'));
 
     }
+
+
+    public function store_profile(Request $request) {
+
+        $id = Auth::user()->id;
+
+        $data = User::find($id);
+
+        $data->name = $request->name;
+
+        $data->email = $request->email;
+
+        $data->username = $request->username;
+
+        if($request->file('image')) {
+
+            $profile_img = $request->file('image');
+
+            $gen = hexdec(uniqid());
+
+            $exe = strtolower($profile_img->getClientOriginalExtension());
+
+            $img_name = $gen.'.'.$exe;
+
+            $location = 'backend/assets/images/profile/';
+
+            $source = $location.$img_name;
+
+            $profile_img->move($location,$img_name);
+
+            $data->profile_image = $source;
+
+        }
+
+        $data->save();
+
+        return redirect()->route('admin.profile');
+
+    }
    
     public function destroy(Request $request)
     {
