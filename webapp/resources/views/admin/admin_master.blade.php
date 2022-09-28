@@ -140,6 +140,9 @@
 
         <!-- App js -->
         <script src="{{asset('backend/assets/js/app.js')}}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="{{asset('backend/assets/js/custom.js')}}"></script>
+
     </body>
 
 </html>

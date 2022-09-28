@@ -38,7 +38,7 @@
                                             <div class="row mb-3">
                                                 <label for="example-text-input" class="col-sm-2 col-form-label">Profile Image</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="file" name="image" id="example-text-input">
+                                                    <input class="form-control" type="file" name="image" id="cImage">
                                                 </div>
                                             </div>
 
@@ -46,7 +46,7 @@
                                             <div class="row mb-3">
                                             <label for="example-text-input" class="col-sm-2 col-form-label"></label>
                                                 <div class="col-sm-10">
-                                                <img class="rounded avatar-lg" draggable="false" alt="user image" src="{{asset('backend/assets/images/small/img-5.jpg')}}" data-holder-rendered="true">
+                                                <img class="rounded avatar-lg" draggable="false" id="showImag" alt="user image" src="{{asset('backend/assets/images/small/img-5.jpg')}}" data-holder-rendered="true">
                                                 </div>
                                             </div>
 
