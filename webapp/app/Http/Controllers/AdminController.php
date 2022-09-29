@@ -48,6 +48,8 @@ class AdminController extends Controller
 
             $profile_img = $request->file('image');
 
+            $old_img = $request->old_img;
+
             $gen = hexdec(uniqid());
 
             $exe = strtolower($profile_img->getClientOriginalExtension());
@@ -61,6 +63,13 @@ class AdminController extends Controller
             $profile_img->move($location,$img_name);
 
             $data->profile_image = $source;
+
+            if($old_img != '') {
+
+                unlink($old_img);
+
+            }
+           
 
         }
 

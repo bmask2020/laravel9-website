@@ -48,6 +48,7 @@
                                                 <div class="col-sm-10">
                                                     @if(!empty($edit_data->profile_image)) 
                                                     <img class="rounded avatar-lg" draggable="false" id="showImag" alt="user image" src="{{asset($edit_data->profile_image)}}" data-holder-rendered="true">
+                                                    <input type="hidden" name="old_img" value="{{$edit_data->profile_image}}">
                                                     @else
                                                     <img class="rounded avatar-lg" draggable="false" id="showImag" alt="user image" src="{{asset('backend/assets/images/profile/no_image.jpg')}}" data-holder-rendered="true">
                                                     @endif
