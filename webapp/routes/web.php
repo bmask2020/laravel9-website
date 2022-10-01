@@ -46,6 +46,9 @@ Route::controller(HomeSliderController::class)->group(function(){
 
         Route::get('/home-slide', 'index')->name('admin.home.slide');
 
+        Route::post('/home-slide/update', 'update_home_slide')->name('admin.update.home.slide');
+        
+
     });
  
 });   

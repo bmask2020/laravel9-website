@@ -10,8 +10,11 @@
                                 <div class="card">
                                     <div class="card-body">
                                     <h4 class="card-title">Home Slide</h4>
-                                        <form action="{{route('admin.store.profile')}}" method="post" enctype="multipart/form-data">
+                                        <form action="{{route('admin.update.home.slide')}}" method="post" enctype="multipart/form-data">
                                             @csrf
+
+
+                                            <input type="hidden" name="id" value="{{$HomeSlide->id}}">
                                             <div class="row mb-3">
                                                 <label for="example-text-input" class="col-sm-2 col-form-label">Title</label>
                                                 <div class="col-sm-10">
@@ -31,7 +34,7 @@
                                             <div class="row mb-3">
                                                 <label for="example-text-input" class="col-sm-2 col-form-label">Video URL</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="text" name="username" value="{{$HomeSlide->video_url}}" id="example-text-input">
+                                                    <input class="form-control" type="text" name="video_url" value="{{$HomeSlide->video_url}}" id="example-text-input">
                                                 </div>
                                             </div>
 
