@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\home\HomeSliderController;
 
 /*
@@ -15,8 +16,11 @@ use App\Http\Controllers\home\HomeSliderController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
+// Frontend All Route 
+Route::controller(FrontendController::class)->group(function(){
+
+    Route::get('/', 'index')->name('index');
+
 });
 
 

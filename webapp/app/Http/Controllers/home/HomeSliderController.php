@@ -52,7 +52,18 @@ class HomeSliderController extends Controller
 
             ]);
 
-        } 
+        } else {
+
+            HomeSlide::findOrFail($id)->update([
+
+                'title'         => $request->title,
+                'short_title'   => $request->short_title,
+                'video_url'     => $request->video_url,
+                'updated_at'    => Carbon::now()
+
+            ]);
+
+        }
 
 
         $notifactions = array(
