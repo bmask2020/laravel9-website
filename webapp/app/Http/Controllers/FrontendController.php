@@ -16,4 +16,11 @@ class FrontendController extends Controller
         return view('frontend.index', compact('HomeSlide', 'About'));
 
     }
+
+
+    public function about() {
+
+        $About = About::find(1);
+        return view('frontend.about', compact('About'));
+    }
 }

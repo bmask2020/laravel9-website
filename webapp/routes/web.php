@@ -21,6 +21,7 @@ use App\Http\Controllers\home\AboutController;
 Route::controller(FrontendController::class)->group(function(){
 
     Route::get('/', 'index')->name('index');
+    Route::get('/about', 'about')->name('about');
 
 });
 

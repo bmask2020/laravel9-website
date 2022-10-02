@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\About;
 use Carbon\Carbon;
+use Image;
 
 class AboutController extends Controller
 {
@@ -38,14 +39,14 @@ class AboutController extends Controller
             $gen_name = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
             Image::make($image)->resize('523', '605')->save('frontend/assets/img/'.$gen_name);
             $save_url = 'frontend/assets/img/'.$gen_name;
-            unlink($old_img);
+            // unlink($old_img);
             About::findOrFail($id)->update([
 
                 'title'                 => $request->title,
                 'short_title'           => $request->short_title,
                 'short_description'     => $request->short_description,
                 'long_description'      => $request->long_description,
-                'img'                   => $save_url,
+                'about_img'             => $save_url,
                 'updated_at'            => Carbon::now()
 
             ]);

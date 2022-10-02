@@ -72,7 +72,7 @@
                                                 <div class="col-sm-10">
                                                     @if(!empty($about->about_img)) 
                                                     <img class="rounded avatar-lg" draggable="false" id="showImag" alt="user image" src="{{asset($about->about_img)}}" data-holder-rendered="true">
-                                                    <input type="hidden" name="old_img" value="{{$HomeSlide->about_img}}">
+                                                    <input type="hidden" name="old_img" value="{{$about->about_img}}">
                                                     @else
                                                     <img class="rounded avatar-lg" draggable="false" id="showImag" alt="user image" src="{{asset('backend/assets/images/profile/no_image.jpg')}}" data-holder-rendered="true">
                                                     @endif
