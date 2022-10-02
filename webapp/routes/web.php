@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\home\HomeSliderController;
+use App\Http\Controllers\home\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,7 @@ Route::controller(AdminController::class)->group(function(){
 });
 
 
+// Home Slider Route
 Route::controller(HomeSliderController::class)->group(function(){
 
     Route::prefix('admin')->group(function(){
@@ -56,6 +58,20 @@ Route::controller(HomeSliderController::class)->group(function(){
     });
  
 });   
+
+
+// About Page Route
+Route::controller(AboutController::class)->group(function(){
+
+    Route::prefix('admin')->group(function(){
+
+        Route::get('/about','home_about')->name('admin.home.about');
+
+        Route::post('/about/update','admin_update_about_page')->name('admin.update.about.page');
+
+    });
+
+});
 
 
 Route::get('/dashboard', function () {
