@@ -36,6 +36,8 @@
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="{{route('admin.home.about')}}">About Page</a></li>
+
+                                    <li><a href="{{route('admin.about.multi.image')}}">About Multi Image</a></li>
                                     
                                 </ul>
                             </li>

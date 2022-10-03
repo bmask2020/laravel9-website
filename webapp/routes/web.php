@@ -70,6 +70,8 @@ Route::controller(AboutController::class)->group(function(){
 
         Route::post('/about/update','admin_update_about_page')->name('admin.update.about.page');
 
+        Route::get('/about/multi-image', 'admin_about_multi_image')->name('admin.about.multi.image');
+
     });
 
 });

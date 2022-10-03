@@ -76,4 +76,10 @@ class AboutController extends Controller
         return redirect()->back()->with($notifactions);
 
     }
+
+
+    public function admin_about_multi_image() {
+
+        return view('admin.about.multi_image');
+    }
 }
