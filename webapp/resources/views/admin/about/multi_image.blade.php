@@ -22,14 +22,14 @@
                                         @endforeach
 
                                     @endif
-                                        <form action="{{route('admin.update.about.page')}}" method="post" enctype="multipart/form-data">
+                                        <form action="{{route('admin.update.multi.page')}}" method="post" enctype="multipart/form-data">
                                             @csrf
 
 
                                             <div class="row mb-3">
                                                 <label for="example-text-input" class="col-sm-2 col-form-label">Silde Image</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="file" name="about_img" id="cImage">
+                                                    <input multiple class="form-control" type="file" name="multi_img[]" id="cImage">
                                                 </div>
                                             </div>
 
