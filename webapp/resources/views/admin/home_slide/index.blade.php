@@ -13,12 +13,21 @@
                                         <form action="{{route('admin.update.home.slide')}}" method="post" enctype="multipart/form-data">
                                             @csrf
 
-
+                                            @isset($HomeSlide->id)
                                             <input type="hidden" name="id" value="{{$HomeSlide->id}}">
+                                            @endisset
+                                           
                                             <div class="row mb-3">
                                                 <label for="example-text-input" class="col-sm-2 col-form-label">Title</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="text" name="title" value="{{$HomeSlide->title}}" id="example-text-input">
+                                                @isset($HomeSlide)
+                                                <input class="form-control" type="text" name="title" value="{{$HomeSlide->title}}" id="example-text-input">
+                                                @endisset
+
+                                                @empty($HomeSlide->title)
+                                                <input class="form-control" type="text" name="title" id="example-text-input">
+                                                @endempty
+                                                   
                                                 </div>
                                             </div>
 
@@ -26,7 +35,13 @@
                                             <div class="row mb-3">
                                                 <label for="example-text-input" class="col-sm-2 col-form-label">Short Title</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="text" name="short_title" value="{{$HomeSlide->short_title}}" id="example-text-input">
+                                                @isset($HomeSlide->short_title)
+                                                <input class="form-control" type="text" name="short_title" value="{{$HomeSlide->short_title}}" id="example-text-input">
+                                                @endisset
+                                                   
+                                                @empty($HomeSlide->short_title)
+                                                <input class="form-control" type="text" name="short_title" id="example-text-input">
+                                                @endempty
                                                 </div>
                                             </div>
 
@@ -34,7 +49,14 @@
                                             <div class="row mb-3">
                                                 <label for="example-text-input" class="col-sm-2 col-form-label">Video URL</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="text" name="video_url" value="{{$HomeSlide->video_url}}" id="example-text-input">
+                                                @isset($HomeSlide->video_url)
+                                                <input class="form-control" type="text" name="video_url" value="{{$HomeSlide->video_url}}" id="example-text-input">
+                                                @endisset
+                                                  
+                                                @empty($HomeSlide->video_url)
+                                                <input class="form-control" type="text" name="video_url" id="example-text-input">
+                                                @endempty
+                                                
                                                 </div>
                                             </div>
 
