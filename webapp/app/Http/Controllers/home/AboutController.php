@@ -117,4 +117,14 @@ class AboutController extends Controller
 
 
     }
+
+
+
+    public function admin_all_multi_image() {
+
+        $allMultiImg = MultiImage::all();
+
+        return view('admin.about.all_multi_image', compact('allMultiImg'));
+        
+    }
 }

@@ -74,6 +74,8 @@ Route::controller(AboutController::class)->group(function(){
 
         Route::post('/about/multi-image/store', 'admin_update_multi_page')->name('admin.update.multi.page');
 
+        Route::get('/about/all-multi-image', 'admin_all_multi_image')->name('admin.all.multi.image');
+
     });
 
 });
