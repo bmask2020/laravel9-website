@@ -76,6 +76,10 @@ Route::controller(AboutController::class)->group(function(){
 
         Route::get('/about/all-multi-image', 'admin_all_multi_image')->name('admin.all.multi.image');
 
+        Route::get('/edit/all-multi-image/{id}', 'admin_edit_all_multi_image')->name('admin.edit.all.multi.image');
+
+        Route::post('/update/all-multi-image', 'admin_update_all_multi_image')->name('admin.update.all.multi.image');
+
     });
 
 });

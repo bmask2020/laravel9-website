@@ -39,9 +39,9 @@
                                 @foreach($allMultiImg as $val)
                             <tr>
                                 <td>{{$i++}}</td>
-                                <td><img src="{{asset($val->multi_image)}}" style="height:5rem;width:5rem"/></td>
+                                <td><img src="{{ asset($val->multi_image)}}" style="height:5rem;width:5rem"/></td>
                                 <td>
-                                    <a href="" class="btn btn-info sm" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="{{ route('admin.edit.all.multi.image',['id' => $val->id]) }}" class="btn btn-info sm" title="Edit"><i class="fas fa-edit"></i></a>
                                     <a href="" class="btn btn-danger sm" title="Delete"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                              

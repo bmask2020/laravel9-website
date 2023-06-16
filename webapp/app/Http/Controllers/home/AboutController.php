@@ -127,4 +127,49 @@ class AboutController extends Controller
         return view('admin.about.all_multi_image', compact('allMultiImg'));
         
     }
+
+
+    public function admin_edit_all_multi_image($id) {
+
+
+        $allMultiImage = MultiImage::findOrFail($id);
+        return view('admin.about.edit_multi_image', compact('allMultiImage'));
+
+    }
+
+
+
+    public function admin_update_all_multi_image(Request $request) {
+
+        
+        $id = $request->id;
+        $image = $request->file('multi_img');
+        if($image) {
+
+            $old_img = $request->old_img;
+            $gen_name = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize('523', '605')->save('frontend/assets/multiImg/'.$gen_name);
+            $save_url = 'frontend/assets/multiImg/'.$gen_name;
+            unlink($old_img);
+            MultiImage::findOrFail($id)->update([
+
+                'multi_image'    => $save_url,
+                'updated_at'     => Carbon::now()
+
+            ]);
+
+        } 
+
+        $notifactions = array(
+
+            'message' => 'Multi Image Successfully Updated',
+            'alert-type' => 'success'
+        );
+
+
+        return redirect()->route('admin.all.multi.image')->with($notifactions);
+
+
+    }
+
 }
