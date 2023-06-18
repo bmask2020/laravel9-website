@@ -80,6 +80,8 @@ Route::controller(AboutController::class)->group(function(){
 
         Route::post('/update/all-multi-image', 'admin_update_all_multi_image')->name('admin.update.all.multi.image');
 
+        Route::get('/delete/all-multi-image/{id}', 'admin_delete_multi_image')->name('admin.delete.multi.image');
+
     });
 
 });
